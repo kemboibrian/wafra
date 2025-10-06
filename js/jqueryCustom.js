@@ -67,19 +67,19 @@ jQuery(window).on('load', function() {
 			var msgClasses = "error form-message";
 		}
 		$("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
-	}
+	} up
 });
 
-jQuery(document).ready(function(){
-	initCounter();
-	// Counter init
-	function initCounter() {
-		jQuery('.dataCount').counterUp({
-			delay: 10,
-			time: 1560
-		});
-	}
-});
+// jQuery(document).ready(function(){
+// 	initCounter();
+// 	// Counter init
+// 	function initCounter() {
+// 		jQuery('.dataCount').counterUp({
+// 			delay: 10,
+// 			time: 1560
+// 		});
+// 	}
+// });
 
 jQuery(function() {
 	initSlickCarousel();
