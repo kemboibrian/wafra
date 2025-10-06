@@ -251,7 +251,7 @@
               </div>
               <span
                 class="ibBgImage bgCover position-absolute"
-                style="background-image: url('images/wafra/pic0.webp')"
+                style="background-image: url('images/wafra/pic0.webp') "
               ></span>
             </article>
           </div>
@@ -335,7 +335,7 @@
                     <img
                       src="images/wafra/pic6.webp"
                       class="img-fluid rounded w-100"
-                      alt="About Wafra Insurance"
+                      alt="About Wafra Insurance" style="height: 400px;width: 800px; object-fit: cover"
                     />
                     <!-- <a href="https://youtu.be/_1fw8co09Uo" data-fancybox class="btnPlay position-absolute rounded-circle d-flex align-items-center justify-content-center fwMedium fontAlter">
             Play
@@ -2001,6 +2001,33 @@ function sendToWhatsApp(event) {
   window.open(url, '_blank');
 }
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const counters = document.querySelectorAll(".dataCount");
+
+  counters.forEach(counter => {
+    const start = parseInt(counter.getAttribute("data-count-start")) || 0;
+    const end = parseInt(counter.getAttribute("data-count-end")) || 0;
+
+    let current = start;
+    const duration = 2000; // 2 seconds
+    const increment = (end - start) / (duration / 50);
+
+    const updateCounter = () => {
+      current += increment;
+      if (current < end) {
+        counter.textContent = Math.floor(current);
+        setTimeout(updateCounter, 50);
+      } else {
+        counter.textContent = end.toLocaleString() + "+"; //  plus sign for display
+      }
+    };
+
+    updateCounter();
+  });
+});
+</script>
+
     <!-- include jQuery library -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <!-- include bootstrap popper JavaScript -->
